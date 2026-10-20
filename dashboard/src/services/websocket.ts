@@ -4,8 +4,19 @@ export class VayujivSocket {
   private reconnectInterval: number = 2000;
   private onDataCallback: ((data: any) => void) | null = null;
 
-  constructor(url: string = 'ws://localhost:5001') {
-    this.url = url;
+  constructor(url?: string) {
+    if (url) {
+      this.url = url;
+    } else {
+      const isBrowser = typeof window !== 'undefined';
+      const isLocalhost = isBrowser && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+      const wsProto = isBrowser && window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+      const defaultHost = isLocalhost
+        ? 'ws://localhost:5001'
+        : (isBrowser ? `${wsProto}//${window.location.host}` : 'ws://localhost:5001');
+
+      this.url = (import.meta as any).env?.VITE_WS_URL || defaultHost;
+    }
   }
 
   public connect(onData: (data: any) => void) {

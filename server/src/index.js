@@ -296,3 +296,6 @@ server.listen(PORT, () => {
   console.log('[VAYUJIV-SERVER] Command Gateway running on port ' + PORT);
   console.log('[VAYUJIV-SERVER] REST: http://localhost:' + PORT + ' | WS: ws://localhost:' + PORT);
 });
+
+export default app;
+export { app, server };

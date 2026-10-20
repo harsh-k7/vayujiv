@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, Radio, Activity, Send, Zap, RotateCcw, Cpu, Terminal, AlertTriangle, CheckCircle2, X } from 'lucide-react';
 import { DroneState } from '../types';
+import { API_BASE } from '../services/api';
 
 interface HeaderProps {
   drone: DroneState | null;
@@ -35,7 +36,7 @@ GPS fix age (ms): 35`
 
   const sendDirectTelemetry = async (payload: any) => {
     try {
-      const res = await fetch('http://localhost:5001/api/telemetry', {
+      const res = await fetch(`${API_BASE}/api/telemetry`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -50,7 +51,7 @@ GPS fix age (ms): 35`
 
   const handleSendSerialRaw = async (isRed = false) => {
     try {
-      const res = await fetch('http://localhost:5001/api/telemetry/raw', {
+      const res = await fetch(`${API_BASE}/api/telemetry/raw`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ raw: serialInput, redSignal: isRed, panic: isRed })

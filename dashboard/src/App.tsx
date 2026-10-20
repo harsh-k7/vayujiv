@@ -7,6 +7,7 @@ import { VitalsPanel } from './components/VitalsPanel';
 import { TriageExplainCard } from './components/TriageExplainCard';
 import { LogsDrawer } from './components/LogsDrawer';
 import { socketService } from './services/websocket';
+import { API_BASE } from './services/api';
 import { Soldier, DroneState, AlertItem, BaseStation, NoFlyZone, SystemLog } from './types';
 
 export const App: React.FC = () => {
@@ -21,7 +22,7 @@ export const App: React.FC = () => {
 
   useEffect(() => {
     // Initial fetch fallback
-    fetch('http://localhost:5001/api/soldiers')
+    fetch(`${API_BASE}/api/soldiers`)
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
@@ -63,7 +64,7 @@ export const App: React.FC = () => {
 
   const handleAcknowledgeAlert = async (alertId: string) => {
     try {
-      await fetch(`http://localhost:5001/api/alerts/${alertId}/ack`, { method: 'POST' });
+      await fetch(`${API_BASE}/api/alerts/${alertId}/ack`, { method: 'POST' });
       socketService.sendAction('ACK_ALERT', { alertId });
       setAlerts((prev) =>
         prev.map((a) => (a.id === alertId ? { ...a, acknowledged: true } : a))
@@ -75,7 +76,7 @@ export const App: React.FC = () => {
 
   const handleScenarioChange = async (scenario: string) => {
     try {
-      await fetch('http://localhost:5001/api/scenarios/trigger', {
+      await fetch(`${API_BASE}/api/scenarios/trigger`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ scenario })
@@ -87,7 +88,7 @@ export const App: React.FC = () => {
 
   const handleRecallDrone = async () => {
     try {
-      await fetch('http://localhost:5001/api/drone/recall', {
+      await fetch(`${API_BASE}/api/drone/recall`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ reason: 'Manual Operator Recall' })
