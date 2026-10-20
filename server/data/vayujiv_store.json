@@ -1,0 +1,136 @@
+{
+  "soldiers": [
+    {
+      "id": "S1",
+      "name": "Havildar Rajesh Kumar",
+      "callsign": "Alpha-1",
+      "lat": 28.6139,
+      "lng": 77.209,
+      "vitals": {
+        "hr": 74,
+        "spo2": 98,
+        "temp": 36.8,
+        "battery": 92,
+        "signalQuality": 98,
+        "motionEnergy": 0.12,
+        "isFall": false,
+        "panic": false,
+        "lastFixAge": 1
+      },
+      "triage": {
+        "priority": "GREEN",
+        "score": 0.05,
+        "ruleTriggered": "NORMAL",
+        "mlConfidence": 0.98,
+        "explain": "Stable vital signs within normal parameters."
+      },
+      "history": []
+    },
+    {
+      "id": "S2",
+      "name": "Naik Vikram Singh",
+      "callsign": "Alpha-2",
+      "lat": 28.6175,
+      "lng": 77.214,
+      "vitals": {
+        "hr": 82,
+        "spo2": 97,
+        "temp": 37,
+        "battery": 88,
+        "signalQuality": 94,
+        "motionEnergy": 0.18,
+        "isFall": false,
+        "panic": false,
+        "lastFixAge": 2
+      },
+      "triage": {
+        "priority": "GREEN",
+        "score": 0.08,
+        "ruleTriggered": "NORMAL",
+        "mlConfidence": 0.96,
+        "explain": "Stable vital signs within normal parameters."
+      },
+      "history": []
+    },
+    {
+      "id": "S3",
+      "name": "Sepoy Amit Sharma",
+      "callsign": "Alpha-3",
+      "lat": 28.6105,
+      "lng": 77.2185,
+      "vitals": {
+        "hr": 78,
+        "spo2": 96,
+        "temp": 36.9,
+        "battery": 84,
+        "signalQuality": 91,
+        "motionEnergy": 0.15,
+        "isFall": false,
+        "panic": false,
+        "lastFixAge": 1
+      },
+      "triage": {
+        "priority": "GREEN",
+        "score": 0.06,
+        "ruleTriggered": "NORMAL",
+        "mlConfidence": 0.97,
+        "explain": "Stable vital signs within normal parameters."
+      },
+      "history": []
+    },
+    {
+      "id": "S4",
+      "name": "Rifleman Manoj Patel",
+      "callsign": "Alpha-4",
+      "lat": 28.621,
+      "lng": 77.2025,
+      "vitals": {
+        "hr": 76,
+        "spo2": 98,
+        "temp": 36.7,
+        "battery": 95,
+        "signalQuality": 96,
+        "motionEnergy": 0.1,
+        "isFall": false,
+        "panic": false,
+        "lastFixAge": 1
+      },
+      "triage": {
+        "priority": "GREEN",
+        "score": 0.04,
+        "ruleTriggered": "NORMAL",
+        "mlConfidence": 0.99,
+        "explain": "Stable vital signs within normal parameters."
+      },
+      "history": []
+    }
+  ],
+  "baseStation": {
+    "name": "Tactical Command Post (Gateway)",
+    "lat": 28.61,
+    "lng": 77.205
+  },
+  "noFlyZones": [
+    {
+      "id": "NFZ-1",
+      "name": "Contested Ridge (Enemy Line)",
+      "center": [
+        28.616,
+        77.204
+      ],
+      "radius": 260
+    },
+    {
+      "id": "NFZ-2",
+      "name": "High-Voltage Pylon Grid",
+      "center": [
+        28.6185,
+        77.218
+      ],
+      "radius": 180
+    }
+  ],
+  "alerts": [],
+  "droneMissions": [],
+  "systemLogs": []
+}

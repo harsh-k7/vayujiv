@@ -1,0 +1,10 @@
+{
+  "name": "vayujiv-root",
+  "version": "1.0.0",
+  "description": "VAYUJIV System Root",
+  "scripts": {
+    "dev": "npm --prefix dashboard run dev",
+    "dashboard": "npm --prefix dashboard run dev",
+    "server": "npm --prefix server start"
+  }
+}

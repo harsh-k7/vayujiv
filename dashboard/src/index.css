@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #060a12;
+  --bg-surface: #0c1424;
+  --bg-card: rgba(14, 23, 42, 0.90);
+  --border-dim: rgba(56, 189, 248, 0.16);
+  --border-bright: rgba(56, 189, 248, 0.50);
+  --color-green: #10b981;
+  --color-yellow: #f59e0b;
+  --color-red: #ef4444;
+  --color-blue: #38bdf8;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3c8;
+  --font-hud: 'Chakra Petch', sans-serif;
+  --font-mono: 'Consolas', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-hud);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.tactical-bg-grid {
+  background-image: 
+    linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-dim);
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-panel:hover {
+  border-color: var(--border-bright);
+}
+
+.hud-font {
+  font-family: var(--font-hud);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mono-font {
+  font-family: var(--font-mono);
+}
+
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { box-shadow: 0 0 0 14px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+@keyframes pulse-yellow {
+  0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+
+.pulse-badge-red {
+  animation: pulse-red 1.5s infinite;
+}
+
+.pulse-badge-yellow {
+  animation: pulse-yellow 2s infinite;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #060a12 !important;
+  border-radius: 8px;
+}
+
+.leaflet-tile {
+  filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) sraturate(0.3) brightness(0.7);
+}
